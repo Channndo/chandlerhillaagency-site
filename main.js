@@ -1,6 +1,6 @@
 // IMPORTANT:
 // After you deploy the Apps Script Web App (Step 4), paste the Web App URL here:
-window.CHA_API_URL = "https://script.google.com/macros/s/AKfycby954RMK85fY75ITM75A7OgzNpwxgDdmaYTZ8tTPRfz69whVeID_O2wpbTIXocWWUKf/exec";
+window.CHA_API_URL = "https://script.google.com/macros/s/AKfycbzEosWPqPY1ctB4zdvG5SPuCn3PK1m03UZCVQ_ugZrhhf-vUWblrZWpQ1nF0vGkmTr0/exec";
 
 (function(){
   const form = document.getElementById('leadForm');
