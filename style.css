@@ -8,11 +8,12 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+
 body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
   color:var(--text);
-  background: #000 url("assets/marble.jpg") center/cover no-repeat fixed;
+  background:#000 url("assets/marble.jpg") center/cover no-repeat fixed;
 }
 
 .wrap{
@@ -26,10 +27,12 @@ body{
 .grid{
   width:min(1120px, 100%);
   display:grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns:1.1fr 1fr;
   gap:24px;
   align-items:stretch;
 }
+
+/* ---------- LEFT PANEL ---------- */
 
 .left{
   padding:22px 10px;
@@ -42,11 +45,13 @@ body{
   gap:10px;
   margin-bottom:18px;
 }
+
 .logo{
   width:110px;
   height:auto;
   display:block;
 }
+
 .brandname{
   font-size:11px;
   letter-spacing:.22em;
@@ -59,7 +64,8 @@ h1{
   margin:14px 0 12px;
   letter-spacing:-.02em;
 }
-.sub{
+
+.left .sub{
   color:rgba(255,255,255,.82);
   max-width:520px;
   font-size:15px;
@@ -74,18 +80,21 @@ h1{
   line-height:1.75;
 }
 
+/* ---------- RIGHT CARD ---------- */
+
 .right{
   background:rgba(255,255,255,.92);
-  backdrop-filter: blur(10px);
+  backdrop-filter:blur(10px);
   border:1px solid rgba(255,255,255,.22);
   border-radius:14px;
-  box-shadow: var(--shadow);
+  box-shadow:var(--shadow);
   padding:20px;
 }
 
 h2{
   margin:6px 0 16px;
   font-size:20px;
+  color:#0f172a;
 }
 
 label{
@@ -118,6 +127,8 @@ button{
   font-size:14px;
 }
 
+/* ---------- TOAST ---------- */
+
 .toast{
   margin-top:12px;
   padding:10px 12px;
@@ -129,29 +140,39 @@ button{
 
 .hidden{display:none !important}
 
-@media (max-width: 900px){
-  .grid{grid-template-columns:1fr}
-  h1{font-size:38px}
-  .right{padding:18px}
+/* ---------- THANK YOU VIEW ---------- */
+
+#thankYouView .sub{
+  color:#0f172a;
+  font-size:15px;
+  line-height:1.6;
 }
+
+/* ---------- LEGAL BLOCK ---------- */
+
 .legal-block{
   margin-top:14px;
   padding-top:12px;
   border-top:1px solid rgba(15,23,42,.12);
   font-size:12px;
   line-height:1.5;
-  color: rgba(15,23,42,.72);
+  color:rgba(15,23,42,.72);
 }
 
 .legal-title{
   font-weight:600;
-  color: rgba(15,23,42,.80);
+  color:rgba(15,23,42,.85);
   margin-bottom:4px;
 }
 
 .legal-text{
-  color: rgba(15,23,42,.65);
+  color:rgba(15,23,42,.7);
 }
-#thankYouView .sub{
-  color: #0f172a;
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr}
+  h1{font-size:38px}
+  .right{padding:18px}
 }
