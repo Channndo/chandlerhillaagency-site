@@ -14,6 +14,14 @@ window.CHA_API_URL = "https://script.google.com/macros/s/AKfycbzEosWPqPY1ctB4zdv
 
   const typeEl = document.getElementById('type');
   const carCountWrap = document.getElementById('carCountWrap');
+  const heardAboutWrap = document.getElementById('heardAboutWrap');
+  const heardAboutEl = document.getElementById('heardAbout');
+  const referralWrap = document.getElementById('referralWrap');
+  const referrerPhoneEl = document.getElementById('referrerPhone');
+  const referrerEmailEl = document.getElementById('referrerEmail');
+  const referrerAddressEl = document.getElementById('referrerAddress');
+
+  const REFERRAL_SOURCE = 'Friend or Colleague';
 
   function cleanPhone(v){
     return (v || '').replace(/[^\d]/g,'').slice(0, 15);
@@ -36,22 +44,50 @@ window.CHA_API_URL = "https://script.google.com/macros/s/AKfycbzEosWPqPY1ctB4zdv
     thankYouView.classList.remove('hidden');
   }
 
+  function clearReferralFields(){
+    if (referrerPhoneEl) referrerPhoneEl.value = '';
+    if (referrerEmailEl) referrerEmailEl.value = '';
+    if (referrerAddressEl) referrerAddressEl.value = '';
+  }
+
+  function updateCarCountVisibility(){
+    const v = (typeEl.value || '').toLowerCase();
+    const show = v.indexOf('auto') !== -1 || v === 'bundle';
+    carCountWrap.classList.toggle('hidden', !show);
+  }
+
+  function updateHeardAboutVisibility(){
+    const hasType = !!(typeEl.value || '').trim();
+    heardAboutWrap.classList.toggle('hidden', !hasType);
+    if (!hasType && heardAboutEl) {
+      heardAboutEl.value = '';
+      updateReferralVisibility();
+    }
+  }
+
+  function updateReferralVisibility(){
+    const isReferral = (heardAboutEl.value || '') === REFERRAL_SOURCE;
+    referralWrap.classList.toggle('hidden', !isReferral);
+    if (!isReferral) clearReferralFields();
+  }
+
+  function updateFormSections(){
+    updateCarCountVisibility();
+    updateHeardAboutVisibility();
+    updateReferralVisibility();
+  }
+
   function resetForm(){
     form.reset();
     showToast('', true);
     formView.classList.remove('hidden');
     thankYouView.classList.add('hidden');
-    updateCarCountVisibility();
+    updateFormSections();
   }
 
-  function updateCarCountVisibility(){
-    const v = (typeEl.value || '').toLowerCase();
-    const show = (v === 'auto' || v === 'bundle');
-    carCountWrap.classList.toggle('hidden', !show);
-  }
-
-  typeEl.addEventListener('change', updateCarCountVisibility);
-  updateCarCountVisibility();
+  typeEl.addEventListener('change', updateFormSections);
+  heardAboutEl.addEventListener('change', updateReferralVisibility);
+  updateFormSections();
 
   newRequestBtn.addEventListener('click', resetForm);
 
@@ -75,8 +111,12 @@ window.CHA_API_URL = "https://script.google.com/macros/s/AKfycbzEosWPqPY1ctB4zdv
       city:      (document.getElementById('city').value || '').trim(),
       state:     (document.getElementById('state').value || '').trim(),
       zip:       (document.getElementById('zip').value || '').trim(),
-      type:      (document.getElementById('type').value || '').trim(),
-      carCount:  (document.getElementById('carCount').value || '').trim()
+      type:      (typeEl.value || '').trim(),
+      carCount:  (document.getElementById('carCount').value || '').trim(),
+      heardAbout: (heardAboutEl.value || '').trim(),
+      referrerPhone: cleanPhone(referrerPhoneEl ? referrerPhoneEl.value : ''),
+      referrerEmail: (referrerEmailEl ? referrerEmailEl.value : '').trim(),
+      referrerAddress: (referrerAddressEl ? referrerAddressEl.value : '').trim()
     };
 
     try{

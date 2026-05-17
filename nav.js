@@ -128,7 +128,9 @@
   }
 
   var hash = (window.location.hash || "").replace("#", "");
-  if (hash === "about" || hash === "products" || hash === "quotes") {
+  var sections = ["about", "products", "locations", "quotes"];
+
+  if (sections.indexOf(hash) !== -1) {
     setActiveSection(hash);
   } else {
     setActiveSection("quotes");
@@ -136,7 +138,7 @@
 
   window.addEventListener("hashchange", function () {
     var h = (window.location.hash || "").replace("#", "");
-    if (h === "about" || h === "products" || h === "quotes") {
+    if (sections.indexOf(h) !== -1) {
       setActiveSection(h);
     }
   });

@@ -1,0 +1,93 @@
+/* TEMPORARY DISCLOSURE — REMOVE WHEN CHANDLER HILL AGENCY OPERATES UNDER ITS OWN APPOINTMENTS */
+
+.temp-disclosure{
+  margin-top:36px;
+  animation:tempDisclosureIn .7s ease .15s both;
+}
+
+.temp-disclosure-divider{
+  height:1px;
+  margin:0 0 20px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.22) 20%,
+    rgba(255,255,255,.22) 80%,
+    transparent
+  );
+}
+
+.temp-disclosure-panel{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:18px 20px;
+  border-radius:12px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.temp-disclosure-icon{
+  flex-shrink:0;
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  background:rgba(255,255,255,.08);
+  color:rgba(255,255,255,.55);
+}
+
+.temp-disclosure-icon svg{
+  width:18px;
+  height:18px;
+}
+
+.temp-disclosure-copy{min-width:0}
+
+.temp-disclosure-primary{
+  margin:0 0 10px;
+  font-size:12px;
+  line-height:1.65;
+  color:rgba(255,255,255,.62);
+}
+
+.temp-disclosure-secondary{
+  margin:0;
+  font-size:11px;
+  line-height:1.55;
+  color:rgba(255,255,255,.45);
+  font-style:italic;
+}
+
+@keyframes tempDisclosureIn{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@media (max-width:600px){
+  .temp-disclosure-panel{
+    flex-direction:column;
+    gap:10px;
+    padding:16px;
+  }
+
+  .temp-disclosure-primary{font-size:11.5px}
+  .temp-disclosure-secondary{font-size:10.5px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .temp-disclosure{
+    animation:none;
+  }
+}
