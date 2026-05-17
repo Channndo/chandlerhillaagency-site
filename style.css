@@ -1785,6 +1785,10 @@ input,select{
     justify-items:center;
   }
 
+  .about-gallery-item--desktop-only{
+    display:none;
+  }
+
   .about-gallery-frame{
     width:100%;
     max-width:148px;
