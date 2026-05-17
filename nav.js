@@ -75,6 +75,14 @@
     });
   });
 
+  document.querySelectorAll("[data-goto-section]").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      var id = el.getAttribute("data-goto-section");
+      if (id) setActiveSection(id);
+    });
+  });
+
   document.querySelectorAll("[data-scroll-target]").forEach(function (el) {
     el.addEventListener("click", function () {
       var targetId = el.getAttribute("data-scroll-target");
@@ -123,17 +131,17 @@
   if (headerBrand) {
     headerBrand.addEventListener("click", function (e) {
       e.preventDefault();
-      setActiveSection("about");
+      setActiveSection("home");
     });
   }
 
   var hash = (window.location.hash || "").replace("#", "");
-  var sections = ["about", "products", "locations", "quotes"];
+  var sections = ["home", "about", "products", "locations", "quotes"];
 
   if (sections.indexOf(hash) !== -1) {
     setActiveSection(hash);
   } else {
-    setActiveSection("quotes");
+    setActiveSection("home");
   }
 
   window.addEventListener("hashchange", function () {

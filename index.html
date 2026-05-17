@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Chandler Hill Agency — personalized insurance guidance for auto, home, life, and specialty coverage. Get a fast quote with no pressure.">
-<title>Chandler Hill Agency</title>
+<meta name="description" content="Chandler Hill Agency — modern insurance with local relationships. Personalized coverage for Northern Indiana families and businesses.">
+<title>Chandler Hill Agency | Modern Insurance. Local Relationships.</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,16 +30,17 @@
 <body>
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a class="header-brand" href="#" aria-label="Chandler Hill Agency home">
+      <a class="header-brand" href="#home" aria-label="Chandler Hill Agency home">
         <img class="header-logo" src="assets/ch-logo.svg" alt="">
         <span class="header-brand-text">Chandler Hill Agency</span>
       </a>
 
       <nav class="header-nav" aria-label="Primary">
+        <button type="button" class="nav-link is-active" data-section="home">Home</button>
         <button type="button" class="nav-link" data-section="about">About</button>
         <button type="button" class="nav-link" data-section="products">Products</button>
         <button type="button" class="nav-link" data-section="locations">Locations</button>
-        <button type="button" class="nav-link nav-link-cta is-active" data-section="quotes">Quotes</button>
+        <button type="button" class="nav-link nav-link-cta" data-section="quotes">Get a Quote</button>
       </nav>
 
       <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
@@ -48,16 +49,157 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <button type="button" class="nav-link is-active" data-section="home">Home</button>
       <button type="button" class="nav-link" data-section="about">About</button>
       <button type="button" class="nav-link" data-section="products">Products</button>
       <button type="button" class="nav-link" data-section="locations">Locations</button>
-      <button type="button" class="nav-link nav-link-cta is-active" data-section="quotes">Get a Quote</button>
+      <button type="button" class="nav-link nav-link-cta" data-section="quotes">Get a Quote</button>
     </nav>
   </header>
 
   <a href="#quotes" class="floating-cta" id="floatingCta">Get a Quote</a>
 
   <main class="site-main">
+    <!-- ========== HOME ========== -->
+    <section id="home" class="section-panel section-home is-active" data-panel="home" aria-label="Chandler Hill Agency home">
+      <div class="home-page">
+        <div class="home-hero reveal">
+          <div class="home-hero-inner">
+            <div class="home-hero-copy">
+              <p class="eyebrow">Chandler Hill Agency</p>
+              <h1 class="home-hero-title">Modern Insurance.<br>Local Relationships.</h1>
+              <p class="home-hero-lead">Personalized coverage guidance for individuals, families, and businesses throughout Northern Indiana.</p>
+              <div class="home-hero-actions">
+                <button type="button" class="btn-primary" data-goto-quotes>Get a Quote</button>
+                <button type="button" class="btn-primary btn-primary-outline" data-goto-section="products">Explore Coverage</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="home-trust" aria-labelledby="home-trust-heading">
+          <div class="home-section-inner">
+            <h2 id="home-trust-heading" class="visually-hidden">Credentials and experience</h2>
+            <div class="home-trust-grid">
+              <article class="home-trust-card reveal">
+                <p class="home-trust-value">3</p>
+                <p class="home-trust-label">Licensed states</p>
+                <p class="home-trust-detail">Indiana, Michigan &amp; Ohio</p>
+              </article>
+              <article class="home-trust-card reveal">
+                <p class="home-trust-value">4</p>
+                <p class="home-trust-label">Years of experience</p>
+                <p class="home-trust-detail">Insurance industry guidance</p>
+              </article>
+              <article class="home-trust-card reveal">
+                <p class="home-trust-value">3</p>
+                <p class="home-trust-label">Northern Indiana offices</p>
+                <p class="home-trust-detail">South Bend, Plymouth &amp; Goshen</p>
+              </article>
+              <article class="home-trust-card reveal">
+                <p class="home-trust-value">P&amp;C · Life · A&amp;H</p>
+                <p class="home-trust-label">Licensed lines</p>
+                <p class="home-trust-detail">Property, life &amp; health coverage</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-coverages" aria-labelledby="home-coverages-heading">
+          <div class="home-section-inner">
+            <div class="home-section-header reveal">
+              <p class="eyebrow">Coverage</p>
+              <h2 id="home-coverages-heading" class="subsection-title">Protection for Real Life</h2>
+              <p class="home-section-lead">Straightforward options for the coverage you need most—explained clearly, without pressure.</p>
+            </div>
+            <div class="home-coverage-grid">
+              <article class="home-coverage-card reveal">
+                <div class="home-coverage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17h14v-5H5v5zM5 12l2-4h10l2 4"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
+                <h3>Auto Insurance</h3>
+                <p>Reliable protection for daily drivers, families, and multi-vehicle households.</p>
+              </article>
+              <article class="home-coverage-card reveal">
+                <div class="home-coverage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+                <h3>Homeowners Insurance</h3>
+                <p>Coverage built around your home, belongings, and long-term peace of mind.</p>
+              </article>
+              <article class="home-coverage-card reveal">
+                <div class="home-coverage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10z"/></svg></div>
+                <h3>Life Insurance</h3>
+                <p>Term, whole, and permanent strategies to help protect the people who matter most.</p>
+              </article>
+              <article class="home-coverage-card reveal">
+                <div class="home-coverage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z"/></svg></div>
+                <h3>Specialty Coverage</h3>
+                <p>Jewelry, collectibles, firearms, and other items that need more than standard limits.</p>
+              </article>
+              <article class="home-coverage-card reveal">
+                <div class="home-coverage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 16h18M5 16l1-8h12l1 8"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg></div>
+                <h3>Recreational Vehicles</h3>
+                <p>Boats, motorcycles, RVs, ORVs, and more—for the way you actually live and play.</p>
+              </article>
+            </div>
+            <div class="home-section-cta reveal">
+              <button type="button" class="btn-primary btn-primary-light" data-goto-section="products">View All Products</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-about-preview" aria-labelledby="home-about-heading">
+          <div class="home-section-inner home-about-preview-copy-only">
+            <div class="home-about-preview-copy reveal">
+              <p class="eyebrow">Your local advisor</p>
+              <h2 id="home-about-heading" class="subsection-title">Built on Trust, Rooted in Mishawaka</h2>
+              <p>Chandler Hill grew up in Mishawaka and has lived in Northern Indiana his entire life. He is passionate about helping people protect what matters most—with honest guidance, clear explanations, and a relationship-driven approach that keeps insurance personal, not overwhelming.</p>
+              <p>Whether you are reviewing coverage for the first time or updating protection for your family or business, you will work with someone who values accessibility, long-term service, and real community connection.</p>
+              <button type="button" class="btn-primary btn-primary-outline" data-goto-section="about">Learn More About Chandler</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-values" aria-labelledby="home-values-heading">
+          <div class="home-section-inner">
+            <div class="home-values-panel glass-panel reveal">
+              <p class="eyebrow">Our approach</p>
+              <h2 id="home-values-heading" class="subsection-title">Insurance That Feels Personal</h2>
+              <p class="home-values-lead">Insurance should feel personal, understandable, and accessible—not complicated or distant.</p>
+              <div class="home-values-grid">
+                <article class="home-value-item">
+                  <h3>Trust</h3>
+                  <p>Clear recommendations and honest conversations—no pressure, no confusion.</p>
+                </article>
+                <article class="home-value-item">
+                  <h3>Accessibility</h3>
+                  <p>Responsive support when you need answers, changes, or claims guidance.</p>
+                </article>
+                <article class="home-value-item">
+                  <h3>Relationships</h3>
+                  <p>Long-term service built around your life, family, and goals—not a one-time transaction.</p>
+                </article>
+                <article class="home-value-item">
+                  <h3>Community</h3>
+                  <p>Local insight and commitment to Northern Indiana clients and neighborhoods.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-final-cta" aria-labelledby="home-final-cta-heading">
+          <div class="home-section-inner">
+            <div class="home-final-cta-panel reveal">
+              <h2 id="home-final-cta-heading" class="home-final-cta-title">Ready to Protect What Matters Most?</h2>
+              <p class="home-final-cta-lead">Start with a fast quote or speak directly with the agency—whichever feels right for you.</p>
+              <div class="home-hero-actions">
+                <button type="button" class="btn-primary" data-goto-quotes>Start Your Quote</button>
+                <a class="btn-primary btn-primary-outline" href="tel:+15743090107">Contact an Agent</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
     <!-- ========== ABOUT ========== -->
     <section id="about" class="section-panel" data-panel="about" aria-hidden="true" aria-label="About Chandler Hill Agency">
       <div class="section-inner">
@@ -128,6 +270,18 @@
               <img class="about-photo" src="assets/about-gallery-3.png" alt="Chandler Hill at a Notre Dame game in Northern Indiana" width="168" height="168" loading="lazy">
             </div>
             <figcaption class="about-gallery-caption">Rooted in Northern Indiana</figcaption>
+          </figure>
+          <figure class="about-gallery-item">
+            <div class="about-photo-wrap about-gallery-frame">
+              <img class="about-photo" src="assets/about-gallery-4.png" alt="Chandler Hill at an industry event" width="168" height="168" loading="lazy">
+            </div>
+            <figcaption class="about-gallery-caption">Industry &amp; community</figcaption>
+          </figure>
+          <figure class="about-gallery-item">
+            <div class="about-photo-wrap about-gallery-frame">
+              <img class="about-photo" src="assets/about-gallery-5.png" alt="Chandler Hill at a Notre Dame football game" width="168" height="168" loading="lazy">
+            </div>
+            <figcaption class="about-gallery-caption">Northern Indiana life</figcaption>
           </figure>
         </div>
 
@@ -484,7 +638,7 @@
     </section>
 
     <!-- ========== QUOTES (existing funnel) ========== -->
-    <section id="quotes" class="section-panel section-quotes is-active" data-panel="quotes" aria-label="Request a quote">
+    <section id="quotes" class="section-panel section-quotes" data-panel="quotes" aria-hidden="true" aria-label="Request a quote">
       <div class="wrap">
         <div class="grid">
           <section class="left">
