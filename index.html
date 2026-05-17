@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chandler Hill Agency — personalized insurance guidance for auto, home, life, and specialty coverage. Get a fast quote with no pressure.">
 <title>Chandler Hill Agency</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,141 +11,386 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-<!-- ✅ FAVICON / SITE ICON (uses your CH SVG) -->
 <link rel="icon" type="image/svg+xml" href="assets/ch-logo.svg">
-<!-- PNG fallback (create assets/favicon-32.png + assets/favicon-16.png if you want max compatibility) -->
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-
-<!-- ✅ iOS Home Screen Icon (create a 180x180 PNG) -->
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-
-<!-- ✅ Optional: Safari pinned tab (monochrome SVG recommended) -->
 <link rel="mask-icon" href="assets/ch-logo.svg" color="#000000">
 
-<!-- ✅ Optional: Social share preview (FB/iMessage/etc). Most platforms prefer PNG/JPG, not SVG. -->
 <meta property="og:title" content="Chandler Hill Agency">
 <meta property="og:description" content="Guidance first. Coverage second.">
 <meta property="og:type" content="website">
-<!-- Replace with your real domain once live -->
 <meta property="og:url" content="https://chandlerhillagency.com/">
 <meta property="og:image" content="assets/ch-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="grid">
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="header-brand" href="#" aria-label="Chandler Hill Agency home">
+        <img class="header-logo" src="assets/ch-logo.svg" alt="">
+        <span class="header-brand-text">Chandler Hill Agency</span>
+      </a>
 
-      <section class="left">
-        <div class="brand">
-          <img class="logo" src="assets/ch-logo.svg" alt="Chandler Hill">
-          <div class="brandname">CHANDLER HILL AGENCY</div>
+      <nav class="header-nav" aria-label="Primary">
+        <button type="button" class="nav-link" data-section="about">About</button>
+        <button type="button" class="nav-link" data-section="products">Products</button>
+        <button type="button" class="nav-link nav-link-cta is-active" data-section="quotes">Quotes</button>
+      </nav>
+
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <button type="button" class="nav-link" data-section="about">About</button>
+      <button type="button" class="nav-link" data-section="products">Products</button>
+      <button type="button" class="nav-link nav-link-cta is-active" data-section="quotes">Get a Quote</button>
+    </nav>
+  </header>
+
+  <a href="#quotes" class="floating-cta" id="floatingCta">Get a Quote</a>
+
+  <main class="site-main">
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section-panel" data-panel="about" aria-hidden="true" aria-label="About Chandler Hill Agency">
+      <div class="section-inner">
+        <div class="section-hero reveal">
+          <p class="eyebrow">About Us</p>
+          <h1 class="section-title">Insurance Built Around People</h1>
         </div>
 
-        <h1>Guidance first.<br>Coverage second.</h1>
-
-        <p class="sub">
-          Tell me what you need. I’ll help you get the right protection without the runaround.
-        </p>
-
-        <ul class="bullets">
-          <li>Auto, home, renters, bundles.</li>
-          <li>Fast quotes. No pressure.</li>
-          <li>Real help when it matters most.</li>
-        </ul>
-      </section>
-
-      <section class="right">
-        <div id="formView">
-          <h2>Request a quote</h2>
-
-          <form id="leadForm">
-            <label>First name</label>
-            <input id="firstName" autocomplete="given-name" required>
-
-            <label>Last name</label>
-            <input id="lastName" autocomplete="family-name" required>
-
-            <label>Email</label>
-            <input id="email" type="email" autocomplete="email" required>
-
-            <label>Phone</label>
-            <input id="phone" autocomplete="tel" required>
-
-            <label>Street address</label>
-            <input id="street" autocomplete="street-address">
-
-            <label>City</label>
-            <input id="city" autocomplete="address-level2">
-
-            <label>State</label>
-            <select id="state">
-              <option value="">Select</option>
-              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
-              <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
-              <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
-              <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-              <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
-              <option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option>
-              <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
-              <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-              <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
-              <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
-            </select>
-
-            <label>Zip code</label>
-            <input id="zip" autocomplete="postal-code">
-
-            <label>Insurance type</label>
-            <select id="type">
-              <option value="">Select</option>
-              <option value="Auto">Auto</option>
-              <option value="Home">Home</option>
-              <option value="Renters">Renters</option>
-              <option value="Bundle">Bundle</option>
-            </select>
-
-            <div id="carCountWrap" class="hidden">
-              <label>How many cars?</label>
-              <select id="carCount">
-                <option value="">Select</option>
-                <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
-              </select>
-            </div>
-
-            <button id="submitBtn" type="submit">Submit</button>
-          </form>
-
-          <div id="toast" class="toast hidden"></div>
-        </div>
-
-        <div id="thankYouView" class="hidden">
-          <h2>Thank you<span id="tyName"></span>.</h2>
-          <p class="sub">Got it. I’ll review this and follow up shortly.</p>
-
-          <button id="newRequestBtn" type="button">Submit another request</button>
-
-          <div class="legal-block">
-            <div class="legal-title">Privacy &amp; Data Protection</div>
-            <div class="legal-text">
-              We collect only the information necessary to provide insurance quotes. Your data is never sold to third parties and is shared only with licensed insurance partners to fulfill your request. We use industry-standard safeguards to protect your information.
-            </div>
-
-            <div class="legal-title" style="margin-top:10px;">Terms of Service</div>
-            <div class="legal-text">
-              By submitting this form, you agree to be contacted by phone, email, or text regarding insurance quotes and related services. Coverage availability and pricing are subject to carrier underwriting guidelines. Submitting this request does not bind coverage.
-            </div>
+        <div class="about-intro reveal">
+          <div class="about-photo-wrap">
+            <img class="about-photo" src="assets/chandler-hill.png" alt="Chandler Hill, founder of Chandler Hill Agency" width="400" height="400">
+          </div>
+          <div class="about-intro-text">
+            <p class="about-name">Chandler Hill</p>
+            <p class="about-role">Licensed Producer</p>
+            <p class="about-intro-lead">Personal guidance for auto, home, life, and specialty coverage—without the runaround.</p>
           </div>
         </div>
-      </section>
 
-    </div>
-  </div>
+        <div class="about-grid">
+          <div class="glass-panel about-copy reveal">
+            <p>At Chandler Hill Agency, insurance is built around real people, not generic policies. We focus on helping individuals, families, and business owners protect what matters most with straightforward guidance, responsive service, and coverage tailored to real-life situations.</p>
+            <p>We understand that insurance can feel complicated and impersonal. Our goal is to simplify the process, explain your options clearly, and help you make confident decisions without pressure or confusion. Whether you're insuring your first vehicle, protecting a home, adding specialty coverage, or planning long-term financial security through life insurance, we're here to help every step of the way.</p>
+            <p>The agency is built on relationships, trust, and accessibility. We believe clients deserve an advisor who actually answers the phone, explains the details, and advocates for them when it matters most.</p>
+          </div>
+
+          <div class="about-cards">
+            <article class="value-card reveal">
+              <div class="value-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10z"/></svg>
+              </div>
+              <h3>People First</h3>
+              <p>Coverage recommendations shaped around your life, family, and goals—not one-size-fits-all templates.</p>
+            </article>
+            <article class="value-card reveal">
+              <div class="value-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+              </div>
+              <h3>Clear Guidance</h3>
+              <p>Plain-language explanations so you understand your options and can decide with confidence.</p>
+            </article>
+            <article class="value-card reveal">
+              <div class="value-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <h3>Responsive Service</h3>
+              <p>Real support when it matters—quotes, changes, claims guidance, and advocacy you can reach.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="section-cta-row reveal">
+          <p>Ready to explore coverage tailored to you?</p>
+          <button type="button" class="btn-primary" data-goto-quotes>Request a Quote</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCTS ========== -->
+    <section id="products" class="section-panel" data-panel="products" aria-hidden="true" aria-label="Insurance products">
+      <div class="section-inner">
+        <div class="section-hero reveal">
+          <p class="eyebrow">Products &amp; Services</p>
+          <h2 class="section-title">Coverage for Every Chapter of Life</h2>
+          <p class="section-lead">Personal, specialty, and life insurance solutions—with expert guidance on every policy.</p>
+        </div>
+
+        <div class="product-category reveal">
+          <h3 class="category-title">Personal Insurance</h3>
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17h14l-1-7H6l-1 7zM7 10l1.5-4h7L17 10"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
+              <h4>Auto Insurance</h4>
+              <p>Reliable protection for your vehicles with options that fit how you drive and what you own.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+              <h4>Homeowners Insurance</h4>
+              <p>Safeguard your home, belongings, and liability with coverage tailored to your property.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 20v-6h6v6"/></svg></div>
+              <h4>Renters Insurance</h4>
+              <p>Affordable protection for personal property and liability while you rent.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div>
+              <h4>Umbrella Insurance</h4>
+              <p>Extra liability limits that extend protection beyond your primary policies.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/><path d="M4 17h2l2-8h8l2 8h2"/></svg></div>
+              <h4>Motorcycle Insurance</h4>
+              <p>Coverage built for riders—on the road, in storage, and everywhere in between.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="8" width="20" height="10" rx="2"/><path d="M6 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg></div>
+              <h4>RV &amp; Trailer Insurance</h4>
+              <p>Protection for recreational vehicles and trailers at home and on the open road.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16l4-8h8l4 8"/><path d="M6 16h12"/></svg></div>
+              <h4>ORV Insurance</h4>
+              <p>Off-road vehicle coverage for ATVs, UTVs, and the adventures you take them on.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="16" r="2"/><circle cx="16" cy="16" r="2"/><path d="M6 16h12l-1-6H7l-1 6z"/></svg></div>
+              <h4>Golf Cart Insurance</h4>
+              <p>Liability and physical damage options for golf carts and low-speed vehicles.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18h18M6 14l3-8h6l3 8"/><path d="M8 18v2M16 18v2"/></svg></div>
+              <h4>Boat &amp; Watercraft Insurance</h4>
+              <p>On-water and off-water protection for boats, personal watercraft, and equipment.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c4 4 4 14 0 18-4-4-4-14 0-18z"/><path d="M4 12h16"/></svg></div>
+              <h4>Flood Insurance</h4>
+              <p>Separate flood coverage to protect property where standard homeowners policies may not.</p>
+            </article>
+            <article class="product-card product-card-link product-card-more" data-goto-quotes>
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></div>
+              <h4>&amp; More</h4>
+              <p>Commercial, bonds, and additional coverage—tell us what you need and we'll find the right fit.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="product-category reveal">
+          <h3 class="category-title">Specialty Coverage</h3>
+          <div class="product-grid product-grid-compact">
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+              <h4>Jewelry</h4>
+              <p>Scheduled coverage for fine jewelry beyond standard personal property limits.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12l2 7-8 11L4 10l2-7z"/></svg></div>
+              <h4>Furs</h4>
+              <p>Specialized protection for fur garments and collections with proper valuation.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+              <h4>Coins &amp; Collectibles</h4>
+              <p>Coverage for rare coins, stamps, and collectible items with agreed values.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><path d="M12 7v4l4 8H8l4-8V7"/></svg></div>
+              <h4>Sporting Goods</h4>
+              <p>Protection for high-value sports equipment, gear, and recreational assets.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></div>
+              <h4>Collector Items</h4>
+              <p>Tailored schedules for antiques, memorabilia, and prized collections.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+              <h4>Tools</h4>
+              <p>Coverage for professional or personal tools that exceed standard policy limits.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14h16M6 14V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6"/><path d="M10 18h4"/></svg></div>
+              <h4>Firearms</h4>
+              <p>Scheduled firearm coverage with options for theft, loss, and liability needs.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+              <h4>SR-22 Filings</h4>
+              <p>Certificate of financial responsibility filings when required by your state.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+              <h4>Special Insurance Filings</h4>
+              <p>Assistance with state-specific filings and compliance documentation you may need.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="product-category reveal" id="category-life">
+          <h3 class="category-title">Life Insurance</h3>
+          <div class="product-grid product-grid-compact">
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18"/></svg></div>
+              <h4>Term Life</h4>
+              <p>Affordable coverage for a set period—ideal for mortgages, income, and growing families.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+              <h4>Whole Life</h4>
+              <p>Permanent protection with lifetime coverage and built-in cash value growth.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19h16M6 16l3-9 3 5 3-7 3 11"/></svg></div>
+              <h4>Universal Life</h4>
+              <p>Flexible permanent life insurance with adjustable premiums and death benefits.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10z"/></svg></div>
+              <h4>Final Expense</h4>
+              <p>Simplified coverage designed to help families manage end-of-life expenses with dignity.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+              <h4>Mortgage Protection</h4>
+              <p>Life coverage structured to help protect your home and loved ones from loan burden.</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 4 5-8"/></svg></div>
+              <h4>Indexed Life Products</h4>
+              <p>Growth-linked permanent life strategies for long-term protection and accumulation.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="premium-cta reveal">
+          <h3>Protect What Matters Most</h3>
+          <p>Get straightforward guidance and a fast quote—no pressure, no runaround.</p>
+          <button type="button" class="btn-primary btn-primary-light" data-goto-quotes>Get a Quote</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== QUOTES (existing funnel) ========== -->
+    <section id="quotes" class="section-panel section-quotes is-active" data-panel="quotes" aria-label="Request a quote">
+      <div class="wrap">
+        <div class="grid">
+          <section class="left">
+            <div class="brand">
+              <img class="logo" src="assets/ch-logo.svg" alt="Chandler Hill">
+              <div class="brandname">CHANDLER HILL AGENCY</div>
+            </div>
+
+            <h1>Guidance first.<br>Coverage second.</h1>
+
+            <p class="sub">
+              Tell me what you need. I'll help you get the right protection without the runaround.
+            </p>
+
+            <ul class="bullets">
+              <li>Auto, home, renters, bundles.</li>
+              <li>Fast quotes. No pressure.</li>
+              <li>Real help when it matters most.</li>
+            </ul>
+          </section>
+
+          <section class="right">
+            <div id="formView">
+              <h2>Request a quote</h2>
+
+              <form id="leadForm">
+                <label>First name</label>
+                <input id="firstName" autocomplete="given-name" required>
+
+                <label>Last name</label>
+                <input id="lastName" autocomplete="family-name" required>
+
+                <label>Email</label>
+                <input id="email" type="email" autocomplete="email" required>
+
+                <label>Phone</label>
+                <input id="phone" autocomplete="tel" required>
+
+                <label>Street address</label>
+                <input id="street" autocomplete="street-address">
+
+                <label>City</label>
+                <input id="city" autocomplete="address-level2">
+
+                <label>State</label>
+                <select id="state">
+                  <option value="">Select</option>
+                  <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
+                  <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
+                  <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                  <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                  <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
+                  <option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option>
+                  <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
+                  <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                  <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
+                  <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
+                </select>
+
+                <label>Zip code</label>
+                <input id="zip" autocomplete="postal-code">
+
+                <label>Insurance type</label>
+                <select id="type">
+                  <option value="">Select</option>
+                  <option value="Auto">Auto</option>
+                  <option value="Home">Home</option>
+                  <option value="Renters">Renters</option>
+                  <option value="Bundle">Bundle</option>
+                </select>
+
+                <div id="carCountWrap" class="hidden">
+                  <label>How many cars?</label>
+                  <select id="carCount">
+                    <option value="">Select</option>
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+                  </select>
+                </div>
+
+                <button id="submitBtn" type="submit">Submit</button>
+              </form>
+
+              <div id="toast" class="toast hidden"></div>
+            </div>
+
+            <div id="thankYouView" class="hidden">
+              <h2>Thank you<span id="tyName"></span>.</h2>
+              <p class="sub">Got it. I'll review this and follow up shortly.</p>
+
+              <button id="newRequestBtn" type="button">Submit another request</button>
+
+              <div class="legal-block">
+                <div class="legal-title">Privacy &amp; Data Protection</div>
+                <div class="legal-text">
+                  We collect only the information necessary to provide insurance quotes. Your data is never sold to third parties and is shared only with licensed insurance partners to fulfill your request. We use industry-standard safeguards to protect your information.
+                </div>
+
+                <div class="legal-title" style="margin-top:10px;">Terms of Service</div>
+                <div class="legal-text">
+                  By submitting this form, you agree to be contacted by phone, email, or text regarding insurance quotes and related services. Coverage availability and pricing are subject to carrier underwriting guidelines. Submitting this request does not bind coverage.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script src="main.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>
