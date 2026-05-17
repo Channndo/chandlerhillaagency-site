@@ -23,20 +23,43 @@ body{
   padding-top:var(--header-h);
 }
 
-/* Fixed marble parallax — desktop only (fixed attachment blurs on mobile) */
-@media (min-width: 901px){
-  body{
-    background:#0a0a0b url("assets/marble.jpg") center/cover no-repeat fixed;
-  }
-}
-
-body::before{
-  content:"";
+/* Fixed viewport marble — sharp on mobile & desktop (never stretched to page height) */
+.marble-bg{
   position:fixed;
   inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.25) 40%, rgba(0,0,0,.55) 100%);
-  pointer-events:none;
   z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+  background:#0a0a0b;
+  transform:translateZ(0);
+  -webkit-transform:translateZ(0);
+}
+
+.marble-bg-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+  transform:translateZ(0);
+  -webkit-transform:translateZ(0);
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+}
+
+.marble-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.42) 0%,
+    rgba(0,0,0,.22) 42%,
+    rgba(0,0,0,.5) 100%
+  );
 }
 
 /* ---------- HEADER ---------- */
@@ -46,7 +69,7 @@ body::before{
   top:0;
   left:0;
   right:0;
-  z-index:100;
+  z-index:200;
   transition:background .35s ease, box-shadow .35s ease, border-color .35s ease;
   border-bottom:1px solid transparent;
 }
@@ -214,7 +237,7 @@ body::before{
 
 .site-main{
   position:relative;
-  z-index:1;
+  z-index:2;
 }
 
 .section-panel{
@@ -1605,9 +1628,14 @@ input,select{
 @media (max-width:900px){
   :root{--header-h: 64px}
 
-  /* Crisp marble on mobile — no fixed attachment */
-  body{
-    background:#0a0a0b url("assets/marble.jpg") center top / cover no-repeat scroll;
+  /* Let marble show through — lighter glass on mobile */
+  .marble-overlay{
+    background:linear-gradient(
+      180deg,
+      rgba(0,0,0,.36) 0%,
+      rgba(0,0,0,.18) 45%,
+      rgba(0,0,0,.44) 100%
+    );
   }
 
   /* backdrop-filter stacks badly on mobile — use solid glass instead */
@@ -1635,7 +1663,8 @@ input,select{
   .home-values-panel,
   .home-final-cta-panel,
   .about-gallery{
-    background:rgba(14,14,18,.88);
+    background:rgba(12,12,14,.72);
+    border-color:rgba(255,255,255,.14);
   }
 
   .right{background:#fff}
