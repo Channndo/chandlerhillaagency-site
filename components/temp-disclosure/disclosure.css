@@ -95,25 +95,30 @@
 .syntrix-guard-link{
   display:inline-flex;
   align-items:center;
-  gap:5px;
+  gap:6px;
   padding:0;
   border:0;
   background:none;
   text-decoration:none;
-  opacity:.32;
   transition:opacity .2s ease;
 }
 
-.syntrix-guard-link:hover{
-  opacity:.5;
+.syntrix-guard-link:hover .syntrix-guard-text,
+.syntrix-guard-link:hover .syntrix-guard-brand{
+  color:rgba(255,255,255,.58);
 }
 
 .syntrix-guard-logo{
-  width:auto;
-  height:14px;
+  width:16px;
+  height:16px;
   flex-shrink:0;
   object-fit:contain;
-  opacity:.9;
+  opacity:.55;
+  transition:opacity .2s ease;
+}
+
+.syntrix-guard-link:hover .syntrix-guard-logo{
+  opacity:.78;
 }
 
 .syntrix-guard-text{
