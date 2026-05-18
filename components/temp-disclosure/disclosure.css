@@ -86,8 +86,56 @@
   .temp-disclosure-secondary{font-size:10.5px}
 }
 
+/* SYNTRIX — sits under Tim Doud disclosure; remove with temp-disclosure folder */
+.syntrix-guard-wrap{
+  margin:12px 0 0;
+  text-align:center;
+}
+
+.syntrix-guard-link{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:0;
+  border:0;
+  background:none;
+  text-decoration:none;
+  opacity:.32;
+  transition:opacity .2s ease;
+}
+
+.syntrix-guard-link:hover{
+  opacity:.5;
+}
+
+.syntrix-guard-logo{
+  width:12px;
+  height:12px;
+  flex-shrink:0;
+  object-fit:contain;
+  opacity:.85;
+}
+
+.syntrix-guard-text{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size:8px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  line-height:1;
+}
+
+.syntrix-guard-brand{
+  color:rgba(255,255,255,.62);
+  font-weight:500;
+}
+
 @media (prefers-reduced-motion: reduce){
   .temp-disclosure{
     animation:none;
+  }
+
+  .syntrix-guard-link{
+    transition:none;
   }
 }

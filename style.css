@@ -233,60 +233,6 @@ body{
   transform:translateY(8px);
 }
 
-/* ---------- SYNTRIX GUARD ---------- */
-
-.syntrix-guard-wrap{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  z-index:85;
-  display:flex;
-  justify-content:center;
-  padding-bottom:20px;
-  pointer-events:none;
-}
-
-.syntrix-guard-link{
-  pointer-events:auto;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:8px 16px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(11,11,13,.78);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  text-decoration:none;
-  transition:border-color .25s ease, background .25s ease;
-}
-
-.syntrix-guard-link:hover{
-  border-color:rgba(255,255,255,.22);
-  background:rgba(11,11,13,.92);
-}
-
-.syntrix-guard-logo{
-  width:22px;
-  height:22px;
-  flex-shrink:0;
-  object-fit:contain;
-}
-
-.syntrix-guard-text{
-  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size:10px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.45);
-}
-
-.syntrix-guard-text strong{
-  color:rgba(255,255,255,.78);
-  font-weight:600;
-}
-
 /* ---------- MAIN / SECTIONS ---------- */
 
 .site-main{
@@ -1924,10 +1870,6 @@ input,select{
     font-size:14px;
   }
 
-  .syntrix-guard-wrap{
-    padding-bottom:max(88px, calc(env(safe-area-inset-bottom, 0px) + 88px));
-  }
-
   .section-cta-row{
     flex-direction:column;
     align-items:stretch;
@@ -1985,7 +1927,6 @@ input,select{
   .reveal,
   .nav-link,
   .floating-cta,
-  .syntrix-guard-link,
   .value-card,
   .product-card{
     animation:none;
