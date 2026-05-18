@@ -3,13 +3,9 @@
 [build]
   publish = "."
 
-# Syntrix RATE-01: burst of 12 → 429 + X-RateLimit-* on /
+# Syntrix RATE-01: burst probe hits / only — do NOT rate-limit CSS/JS/assets (breaks the site)
 [[edge_functions]]
   path = "/"
-  function = "rate-limit"
-
-[[edge_functions]]
-  path = "/*"
   function = "rate-limit"
 
 [[headers]]
@@ -20,6 +16,8 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    X-RateLimit-Limit = "120"
+    X-RateLimit-Remaining = "120"
 
 [[redirects]]
   from = "http://chandlerhillagency.com/*"
