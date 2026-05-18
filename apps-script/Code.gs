@@ -68,6 +68,7 @@ const HEADERS = [
 
 function doPost(e) {
   try {
+    checkBurstRateLimit_();
     const payload = parsePayload_(e);
     validatePayload_(payload);
     checkRateLimit_(payload.email);
@@ -113,7 +114,13 @@ function doPost(e) {
 }
 
 function doGet() {
-  return jsonResponse_({ ok: true, message: 'Chandler Hill Agency lead endpoint is running.' });
+  try {
+    checkBurstRateLimit_();
+    return jsonResponse_({ ok: true, message: 'Chandler Hill Agency lead endpoint is running.' });
+  } catch (err) {
+    const message = err && err.message ? err.message : 'Too many requests.';
+    return jsonResponse_({ ok: false, error: message });
+  }
 }
 
 function setupSheetHeaders() {
@@ -176,6 +183,17 @@ function validatePayload_(p) {
   }
   if (p.referrerEmail && !isValidEmail_(p.referrerEmail)) {
     throw new Error('Referrer email is not valid.');
+  }
+}
+
+function checkBurstRateLimit_() {
+  const cache = CacheService.getScriptCache();
+  const minute = Math.floor(Date.now() / 60000);
+  const key = 'burst_' + minute;
+  const n = parseInt(cache.get(key) || '0', 10) + 1;
+  cache.put(key, String(n), 120);
+  if (n > 12) {
+    throw new Error('Too many requests. Please try again in a minute.');
   }
 }
 

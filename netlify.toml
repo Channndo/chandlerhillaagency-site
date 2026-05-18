@@ -1,0 +1,40 @@
+# Static site — no build step. Connect this repo on Netlify and point chandlerhillagency.com here
+# (GitHub Pages cannot set X-RateLimit-* or return 429; Syntrix RATE-01 needs Netlify edge or similar.)
+[build]
+  publish = "."
+
+# Syntrix RATE-01: burst of 12 → 429 + X-RateLimit-* on /
+[[edge_functions]]
+  path = "/"
+  function = "rate-limit"
+
+[[edge_functions]]
+  path = "/*"
+  function = "rate-limit"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[redirects]]
+  from = "http://chandlerhillagency.com/*"
+  to = "https://chandlerhillagency.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.chandlerhillagency.com/*"
+  to = "https://chandlerhillagency.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.chandlerhillagency.com/*"
+  to = "https://chandlerhillagency.com/:splat"
+  status = 301
+  force = true
