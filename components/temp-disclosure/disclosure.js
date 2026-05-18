@@ -22,7 +22,7 @@
   }
 
   function loadMarkup() {
-    return fetch(COMPONENT_BASE + "disclosure.html").then(function (res) {
+    return fetch(COMPONENT_BASE + "disclosure.html?v=5").then(function (res) {
       if (!res.ok) throw new Error("Disclosure markup failed to load");
       return res.text();
     });

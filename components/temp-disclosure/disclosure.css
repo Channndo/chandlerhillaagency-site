@@ -109,16 +109,15 @@
 }
 
 .syntrix-guard-logo{
-  width:16px;
-  height:16px;
+  width:18px;
+  height:18px;
   flex-shrink:0;
-  object-fit:contain;
-  opacity:.55;
+  opacity:.62;
   transition:opacity .2s ease;
 }
 
 .syntrix-guard-link:hover .syntrix-guard-logo{
-  opacity:.78;
+  opacity:.88;
 }
 
 .syntrix-guard-text{
